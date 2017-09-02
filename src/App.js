@@ -14,7 +14,15 @@ class BooksApp extends React.Component {
   }
 
   render() {
-    return (
+    // return (
+    // )
+  }
+}
+
+export default BooksApp
+
+
+
       <div className="app">
         {this.state.showSearchPage ? (
           <div className="search-books">
@@ -199,8 +207,3 @@ class BooksApp extends React.Component {
           </div>
         )}
       </div>
-    )
-  }
-}
-
-export default BooksApp
