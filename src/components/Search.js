@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-import * as BooksAPI from './BooksAPI';
+import * as BooksAPI from '.././BooksAPI';
 import Book from './Book';
 
 class Search extends Component {
@@ -13,7 +13,7 @@ class Search extends Component {
   }
 
   updateQuery = (query) => {
-    
+
   }
 
   render() {
