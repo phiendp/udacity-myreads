@@ -5,9 +5,12 @@ import Bookshelf from './BookShelf';
 
 class BookList extends Component {
 
+  /*
+    Filter the books based on its shelf status
+  */
   _filterBooks = (shelf) => {
-    const { books } = this.props;
-    return books.filter((book) => book.shelf === shelf);
+    const { currentBooks } = this.props;
+    return currentBooks.filter((book) => book.shelf === shelf);
   }
 
   render () {

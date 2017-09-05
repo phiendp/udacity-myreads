@@ -15,9 +15,9 @@ class BooksApp extends React.Component {
     });
   }
 
-  /**
-   * Change a book's shelf or add it to a list in a shelf
-   */
+  /*
+    Change a book's shelf or add it to a list in a shelf
+  */
   updateShelf = (book, updatedShelf) => {
     const { books } = this.state;
 
@@ -51,12 +51,12 @@ class BooksApp extends React.Component {
     return (
       <div className="app">
         <Route exact path="/search" render={ () => (
-          <Search books={ books } updateShelf={ this.updateShelf } />
+          <Search currentBooks={ books } updateShelf={ this.updateShelf } />
         )} />
 
         <Route exact path="/" render={ () => (
           <BookList
-            books={ books }
+            currentBooks={ books }
             updateShelf={ this.updateShelf }
           />
         ) } />

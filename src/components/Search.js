@@ -12,9 +12,37 @@ class Search extends Component {
     }      
   }
 
-  updateQuery = (query) => {
+  /**
+    Update the query from user's input and search BooksAPI for related results to the query
+  */
+  performBookSearch = (query) => {
+    const { currentBooks } = this.props;
+    this.setState({ query: query });
+    
+    const trimQuery = query.trim();
+    if (trimQuery === '')
+      return;
+    
+    BooksAPI.search(trimQuery, 10).then((response) => {
+      if (response && response.length) {
+        const books = response.map((book) => {
+          const bookFromShelf = currentBooks.find((bookFromShelf) => bookFromShelf.id === book.id);
+          const shelf = bookFromShelf ? bookFromShelf.shelf : 'none';
 
-  }
+          return {
+            id: book.id,
+            shelf: shelf,
+            authors: book.authors,
+            title: book.title,
+            imageLinks: {
+                thumbnail: book.imageLinks.thumbnail
+            }
+          };
+        });
+        this.setState({ books });
+      }
+    });
+  };
 
   render() {
     const { books } = this.state;
@@ -33,7 +61,7 @@ class Search extends Component {
           <input
               type="text"
               placeholder="Search by title or author"
-              onChange={ (event) => this.updateQuery(event.target.value) }
+              onChange={ (event) => this.performBookSearch(event.target.value) }
           />
         </div>
       </div>
