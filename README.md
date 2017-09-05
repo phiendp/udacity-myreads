@@ -7,8 +7,8 @@ First project of Udacity's React nanodegree, in which a bookshelf app is created
 
 1. Software installation:
     - [NodeJS](https://nodejs.org) (for testing, previewing, compiling and optimizing processes)
-    - [NPM](https://www.npmjs.com) (for node modules management) `brew install yarn`;
+    - [NPM](https://www.npmjs.com) (for node modules management)
 2. Setting up IDE/Editor
-    - Install development dependencies: In terminal, cd to __this__ folder: `npm install`
+    - Install development dependencies: In terminal, execute this command in the project's directory: `npm install`
 3. Run this app locally:
     - Execute `npm start`
