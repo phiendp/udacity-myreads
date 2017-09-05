@@ -2,7 +2,7 @@ import React from 'react';
 import Book from './Book'
 
 
-function BookShelf({ name, books}) {
+function BookShelf({ name, books, updateShelf}) {
   return(
     <div className="bookshelf">
       <h2 className="bookshelf-title"> {name} </h2>
@@ -19,7 +19,7 @@ function BookShelf({ name, books}) {
                   title={ book.title }
                   imageLinks={ book.imageLinks }
                   shelf={ book.shelf }
-                  // updateShelf={ updateShelf }
+                  updateShelf={ updateShelf }
                 />
               </li>
             )
